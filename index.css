@@ -1,0 +1,39 @@
+.header{
+    background-color: aquamarine;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    border: 1px solid black ;
+}
+.header-image{
+    width: 40px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.nav-items ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+.nav-items li{
+    padding: 10px;
+}
+
+/* <---Body--> */
+.card img{
+    width: 100%;
+    
+}
+.card{
+    width: 200px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    
+}
+.body-cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
