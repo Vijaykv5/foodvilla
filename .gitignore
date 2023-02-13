@@ -1,3 +1,5 @@
+All files That can be regenerated  
+
 node_modules/*
 .parcel-cache
 dist/
