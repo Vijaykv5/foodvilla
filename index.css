@@ -15,7 +15,7 @@
     flex-wrap: wrap;
     list-style-type: none;
 }
-.nav-items li{
+.nav-items ul li{
     padding: 10px;
 }
 
@@ -25,15 +25,17 @@
     
 }
 .card{
-    width: 200px;
-    border: 1px solid black;
+    width: 254px;
+    border: 1px solid rgb(0, 0, 0);
     padding: 10px;
     margin: 10px;
     
+   
 }
 .body-cards{
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    
+   
 }
 
