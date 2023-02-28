@@ -1,3 +1,3 @@
 # foodvilla
 
-The project is created with React 
+The project is created with React under akshay saini course 
