@@ -24,18 +24,26 @@
     width: 100%;
     
 }
+
 .card{
     width: 254px;
-    border: 1px solid rgb(0, 0, 0);
-    padding: 10px;
+    border: 1px solid rgb(177, 172, 172);
+    border-radius: 3%;
+    padding: 20px;
     margin: 10px;
-    
-   
 }
 .body-cards{
+    padding-top: 50px;
+    padding-left: 20px;
     display: flex;
     flex-wrap: wrap;
-    
-   
+    gap: 10px;
+}
+
+
+.h4{
+
+    align-items: center;
+    justify-content:center;
 }
 

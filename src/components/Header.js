@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 export const Title = ()=> {
     return (
         
@@ -8,9 +9,16 @@ export const Title = ()=> {
         );
 };
 
- 
+
 const Header =()=>{
+    
+    useEffect(()=>{
+        console.log("UseFffect");
+    },[]);
+   
+    console.log("render")
     return (
+    
     <div className="header">
         <Title/>
         <div className="nav-items">
@@ -21,6 +29,9 @@ const Header =()=>{
             <li>Cart </li>
         </ul>
         </div>
+        
+        
+       
     </div>
     
     )  

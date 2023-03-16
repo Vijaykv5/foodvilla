@@ -6,7 +6,7 @@ const Restocard=(props)=>{
     
     return(
         <div className="card">
-            <img src={IMG_CDN_URL +props.restaurant.data?.cloudinaryImageId} ></img>
+            <img className="img-res" src={IMG_CDN_URL +props.restaurant.data?.cloudinaryImageId} ></img>
             <h2>{props.restaurant.data?.name}</h2>
             <h3>{props.restaurant.data?.cuisines.join(", ")}</h3>
             <h4>{props.restaurant.data?.deliveryTime} Stars</h4>

@@ -1,17 +1,20 @@
 import { useState, useEffect } from "react";
 import Restocard from "./Restocard";
+import Shimmer from "./shimmer";
+
 
 function filterData(searchtext, restraurants) {
   const filterData = restraurants.filter((restaurant) =>
-    restaurant.data.name.includes(searchtext)
+    restaurant?.data?.name?.toLowerCase()?.includes(searchtext.toLowerCase())
   );
   return filterData;
 }
 
 const Body = () => {
-  const [restraurants, setRestraurants] = useState([]);
+  const[allRestraunts,setAllRestraunts]=useState([]);
+  const [filteredRestraurants, setFilteredRestraurants] = useState([]);
   const [searchtext, setSearchText] = useState("");
-
+  //console.log(restraurants);
   //How to use use effect
   useEffect(() => {
     getRestaurants();
@@ -24,9 +27,16 @@ const Body = () => {
     const json = await data.json();
     console.log(json?.data?.cards[2]?.data?.data?.cards);
     //optional chaining
-    setRestraurants(json?.data?.cards[2]?.data?.data?.cards);
+    setAllRestraunts(json?.data?.cards[2]?.data?.data?.cards);
+    setFilteredRestraurants(json?.data?.cards[2]?.data?.data?.cards);(json?.data?.cards[2]?.data?.data?.cards);
   }
-  return (
+  //Not rendering anything...
+  if(!allRestraunts) return null;
+
+  
+
+  //return is rendering JSX
+  return (allRestraunts.length===0)?<Shimmer/>:(
     <>
       <div className="search-container">
         <input
@@ -41,17 +51,22 @@ const Body = () => {
         <button
           className="search-btn"
           onClick={() => {
-            const data = filterData(searchtext, restraurants);
-            setRestraurants(data);
+            const data = filterData(searchtext, allRestraunts);
+            setFilteredRestraurants(data);
           }}
         >
-          Search{" "}
+          Search{""}
         </button>
       </div>
 
       <div className="body-cards">
-        {restraurants.map((restraurants) => (
-          <Restocard key={restraurants.id} restaurant={restraurants} />
+      
+        {filteredRestraurants.map((restraurants) => (
+          
+          
+            <Restocard key={restraurants.id} restaurant={restraurants} />
+          
+          
         ))}
       </div>
     </>
