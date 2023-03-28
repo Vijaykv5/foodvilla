@@ -4,11 +4,13 @@
     justify-content: space-between;
     margin: 10px;
     border: 1px solid black ;
+    
 }
 .header-image{
-    width: 40px;
-    padding-left: 10px;
-    padding-top: 10px;
+    width: 80px;
+    height: 70px;
+    /* padding-left: 10px;
+    padding-top: 10px; */
 }
 .nav-items ul{
     display: flex;
@@ -47,3 +49,28 @@
     justify-content:center;
 }
 
+.shimmer-cards{
+    width: 254px;
+    background-color: rgb(222, 220, 220);
+    padding: 20px;
+    margin: 10px;
+    padding-top: 50px;
+    padding-left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    height: 362.64px;
+}
+
+.stars{
+    background-color: aquamarine;
+    width:auto
+}
+
+.error-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    margin-left: 20%;
+}

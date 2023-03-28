@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import logo from "../assets/images/logo.png";
+import { Link } from "react-router-dom";
 export const Title = ()=> {
     return (
         
         <a href="/">
-        <img className="header-image" src="https://cdn.worldvectorlogo.com/logos/swiggy-1.svg"></img>
+        <img className="header-image" src={logo}></img>
         </a>
         
         );
@@ -23,9 +25,10 @@ const Header =()=>{
         <Title/>
         <div className="nav-items">
         <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
+            <Link to="/"><li>Home</li></Link>
+            <Link to="/about"><li>About</li>
+            </Link>
+            <Link to="/contact" ><li>Contact</li></Link>
             <li>Cart </li>
         </ul>
         </div>
