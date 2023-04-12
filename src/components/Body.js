@@ -6,6 +6,7 @@ import { filterData } from "../utils/helper";
 import useOnline from "../utils/useOnline";
 
 
+
 const Body = () => {
   const[allRestraunts,setAllRestraunts]=useState([]);
   const [filteredRestraurants, setFilteredRestraurants] = useState([]);
@@ -32,25 +33,30 @@ const Body = () => {
     return <h1>Check your internet connection </h1>
   } 
   //Not rendering anything...
-  if(!allRestraunts) return null;
-
   
+  if (!filteredRestraurants ) {
+    return <p>No restaurants found.</p>;
+  } 
 
   //return is rendering JSX
   return (allRestraunts.length===0)?<Shimmer/>:(
     <>
-      <div className="search-container">
-        <input
+      <div className="search-container p-5 my-9 text-center">
+        <input 
+        
           type="text"
-          className="search-input"
-          placeholder="Search"
+          className="search-input w-96 p-3 font-poppins  focus:outline-orange-300 "
+
+          
+          placeholder= " Search a restaurent you want..."
           value={searchtext}
           onChange={(e) => {
             setSearchText(e.target.value);
           }}
         />
+     
         <button
-          className="search-btn"
+          className="search-btn font-poppins bg-orange-400 text-white hover:bg-black p-3 rounded-e-lg"
           onClick={() => {
             const data = filterData(searchtext, allRestraunts);
             setFilteredRestraurants(data);
@@ -59,18 +65,21 @@ const Body = () => {
           Search{""}
         </button>
       </div>
-
-      <div className="body-cards">
       
+      
+     
+      <div className="body-cards flex flex-wrap ml-5">
+        {console.log(filteredRestraurants)}
         {filteredRestraurants.map((restraurants) => (
           
           <Link to={"/restaurent/"+restraurants.data.id}   key={restraurants.data.id}>
             <Restocard  restaurant={restraurants} />
-            {console.log(restraurants)}
+            
             </Link>
             
         ))}
       </div>
+      
     </>
   );
 };

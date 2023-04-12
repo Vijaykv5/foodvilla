@@ -1,7 +1,10 @@
 const Contact = ()=>{
     return(
-        <h1>My Contact No is 9778536940</h1>
-    )
+       <div>
+        <img src="https://media.licdn.com/media/AAYQAQSOAAgAAQAAAAAAAB-zrMZEDXI2T62PSuT6kpB6qg.png"></img>
+       </div> 
+        
+    ) 
 }
 
 export default  Contact;
