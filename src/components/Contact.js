@@ -1,7 +1,8 @@
 const Contact = ()=>{
     return(
        <div>
-        <img src="https://media.licdn.com/media/AAYQAQSOAAgAAQAAAAAAAB-zrMZEDXI2T62PSuT6kpB6qg.png"></img>
+        
+        <h1> Vijay KV </h1>
        </div> 
         
     ) 

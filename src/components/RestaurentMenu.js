@@ -11,7 +11,7 @@ const ResMenu=()=>{
    const restaurant = useRestraunt(id)
     return (!restaurant)?<Shimmer/>:(
         <>
-        
+        <div className="">
         <h1>Restaurent ID : {id}</h1>
         <h1>{restaurant.name}</h1>
         <img src={IMG_CDN_URL+ restaurant.cloudinaryImageId}/>
@@ -19,7 +19,7 @@ const ResMenu=()=>{
         <h2>{restaurant.city}</h2>
         <h2>{restaurant.costForTwo}</h2>
         <h2>{restaurant.avgRating}Stars</h2>
-
+        </div>
         </>
         
     )

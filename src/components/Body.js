@@ -4,6 +4,8 @@ import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useOnline from "../utils/useOnline";
+import { RESTAURANT_API } from "../contants";
+import { restaurantData } from "../api";
 
 
 
@@ -13,21 +15,42 @@ const Body = () => {
   const [searchtext, setSearchText] = useState("");
   //console.log(restraurants);
   //How to use use effect
-  useEffect(() => {
-    getRestaurants();
-  }, []);
+ 
+  
 
   async function getRestaurants() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
-    );
+    //handling CORS error using try catch
+    try{
+    const data = await fetch(RESTAURANT_API)
     const json = await data.json();
-    console.log(json?.data?.cards[2]?.data?.data?.cards);
+    
+    // ?.data?.cards[2]?.data?.data?.cards
     //optional chaining
     setAllRestraunts(json?.data?.cards[2]?.data?.data?.cards);
-    setFilteredRestraurants(json?.data?.cards[2]?.data?.data?.cards);(json?.data?.cards[2]?.data?.data?.cards);
+    setFilteredRestraurants(json?.data?.cards[2]?.data?.data?.cards);
+    }
+    catch(error){
+      console.log(error)
+    }
   }
 
+  useEffect(() => {
+
+    // if CORS is not enable in browser then show the local data only and show the CORS error in console
+    setTimeout(() => {
+      setAllRestraunts(restaurantData[2]?.data?.data?.cards);
+      setFilteredRestraurants(restaurantData[2]?.data?.data?.cards);
+      
+      
+        // Show the notice that "You are seeing mocked data. Cors is not enabled"  - Notice.js
+    }, 10);
+
+    // if CORS is enable in browser then setTimeout will run and fetch the json data from API and render the UI
+    setTimeout(() => {
+        getRestaurants();
+    }, 0);
+  },[])
+  
   const isOnline=useOnline();
   if(!isOnline){
     return <h1>Check your internet connection </h1>
@@ -69,7 +92,7 @@ const Body = () => {
       
      
       <div className="body-cards flex flex-wrap ml-5">
-        {console.log(filteredRestraurants)}
+        
         {filteredRestraurants.map((restraurants) => (
           
           <Link to={"/restaurent/"+restraurants.data.id}   key={restraurants.data.id}>
@@ -77,6 +100,7 @@ const Body = () => {
             
             </Link>
             
+
         ))}
       </div>
       
