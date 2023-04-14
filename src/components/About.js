@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import Image from "../assets/images/About_us.png"
+// import Image from "../assets/images/About_us.png"
 const About=()=>{
     return(
         <div className="">
@@ -8,7 +8,7 @@ const About=()=>{
             <div className="items-start flex flex-wrap">
             <div className=" mt-4 p-3 ml-16 mr-20  rounded-lg bg-orange-400 text-white font-semibold text-6xl   "> Culinary Delights </div>
             <Link to="/about">
-            <img class="flex-row items-end ml-12 -mt-[70]" src={Image} />
+            <img class="flex-row items-end ml-12 -mt-[70]" src="" />
             </Link>
             </div>
          
