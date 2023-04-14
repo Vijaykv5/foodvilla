@@ -29,6 +29,7 @@ const Header =()=>{
             <Link to="/about"><li className="px-4 font-poppins font-bold hover:text-orange-400 hover:border-b-2 hover:border-orange-400 transition-all duration-200">About</li></Link>
             <Link to="/contact" ><li className="px-4 font-poppins font-bold hover:text-orange-400 hover:border-b-2 hover:border-orange-400 transition-all duration-200">Contact</li></Link>
             <Link to="/instamart" ><li className="px-4 font-poppins font-bold hover:text-orange-400 hover:border-b-2 hover:border-orange-400 transition-all duration-200">Instamart</li></Link>
+            
             <li>Cart </li>
         </ul>
         </div>

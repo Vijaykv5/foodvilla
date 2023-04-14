@@ -28,8 +28,7 @@ const Restocard=(props)=>{
         { (rating>=4)? <div className="bg-green-500 rounded-sm text-justify  text-white flex mt-3 h-6 w-14"> <img className="h-6 w-6 p-1 " src={icon}></img>{rating}</div> :<div className="bg-orange-500 text-justify rounded-sm text-white flex mt-3 h-6 w-14"> <img className="h-6 w-6 p-1 " src={icon}></img>{rating}  </div>}
             <h3 className="name p-2 font-extralight  text-sm  pt-3 pl-20">{props.restaurant.data?.costForTwoString}</h3>
         </div>
-        
-            
+              
             
         </div>
     )
