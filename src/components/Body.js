@@ -43,7 +43,7 @@ const Body = () => {
       
       
         // Show the notice that "You are seeing mocked data. Cors is not enabled"  - Notice.js
-    }, 10);
+    }, 100);
 
     // if CORS is enable in browser then setTimeout will run and fetch the json data from API and render the UI
     setTimeout(() => {
@@ -91,7 +91,7 @@ const Body = () => {
       
       
      
-      <div className="body-cards flex flex-wrap ml-5">
+      <div className="body-cards flex flex-wrap ml-5 mb-24">
         
         {filteredRestraurants.map((restraurants) => (
           
