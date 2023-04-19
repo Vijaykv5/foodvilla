@@ -65,12 +65,9 @@ const Body = () => {
   return (allRestraunts.length===0)?<Shimmer/>:(
     <>
       <div className="search-container p-5 my-9 text-center">
-        <input 
-        
+        <input         
           type="text"
-          className="search-input w-96 p-3 font-poppins  focus:outline-orange-300 "
-
-          
+          className="search-input w-96 p-3 font-poppins  focus:outline-orange-300 border-solid border-2 border-gray-200 rounded-l-md"
           placeholder= " Search a restaurent you want..."
           value={searchtext}
           onChange={(e) => {
@@ -79,7 +76,7 @@ const Body = () => {
         />
      
         <button
-          className="search-btn font-poppins bg-orange-400 text-white hover:bg-black p-3 rounded-e-lg"
+          className="search-btn font-poppins bg-orange-400 text-white hover:bg-black p-3.5 rounded-e-lg"
           onClick={() => {
             const data = filterData(searchtext, allRestraunts);
             setFilteredRestraurants(data);
@@ -91,7 +88,7 @@ const Body = () => {
       
       
      
-      <div className="body-cards flex flex-wrap ml-5 mb-24">
+      <div className="body-cards flex justify-center flex-wrap ml-5 mb-24">
         
         {filteredRestraurants.map((restraurants) => (
           
