@@ -21,7 +21,7 @@ const Header =()=>{
     console.log("render")
     return (
     
-    <div className="flex justify-between bg-white shadow-xl sticky top-0 z-50 " >
+    <div className="flex justify-between bg-white shadow-xl sticky top-0 z-50" >
         <Title/>
         <div className="nav-items">
         <ul className="flex p-7">

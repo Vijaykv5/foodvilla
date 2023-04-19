@@ -15,11 +15,11 @@ import Shimmer from "./components/shimmer";
 const Instamart = lazy(()=> import("./components/Instamart"))
 const AppLayout =()=>{
     return(
-        <>
+        <div id="flex-container">
         <Header/>
-        <Outlet/>
+        <Outlet/>     
         <Footer/>
-        </>
+        </div>
     )
 }
 //Router Path Configuration
