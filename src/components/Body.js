@@ -88,7 +88,7 @@ const Body = () => {
       
       
      
-      <div className="body-cards flex justify-center flex-wrap ml-5 mb-24">
+      <div className="body-cards flex justify-center flex-wrap  mb-24">
         
         {filteredRestraurants.map((restraurants) => (
           
