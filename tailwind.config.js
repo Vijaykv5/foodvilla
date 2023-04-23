@@ -9,6 +9,8 @@ module.exports = {
         poppins: ['Poppins', 'sans-serif'],
         adelia: ["ADELIA", "cursive"],
         sans: ['BR Firma', 'sans-serif'],
+        nunito: ['nunito', 'sans-serif'],
+        MyFont: ['My Font', 'serif'] 
       }, 
       
     },

@@ -35,21 +35,10 @@ const Body = () => {
   }
 
   useEffect(() => {
-
-    // if CORS is not enable in browser then show the local data only and show the CORS error in console
-    setTimeout(() => {
-      setAllRestraunts(restaurantData[2]?.data?.data?.cards);
-      setFilteredRestraurants(restaurantData[2]?.data?.data?.cards);
-      
-      
-        // Show the notice that "You are seeing mocked data. Cors is not enabled"  - Notice.js
-    }, 100);
-
-    // if CORS is enable in browser then setTimeout will run and fetch the json data from API and render the UI
     setTimeout(() => {
         getRestaurants();
     }, 0);
-  },[])
+  },[]);
   
   const isOnline=useOnline();
   if(!isOnline){

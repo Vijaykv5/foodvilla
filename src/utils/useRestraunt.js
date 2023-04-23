@@ -4,17 +4,22 @@ const useRestraunt = (id)=>{
         getRestaurantInfo();
     },[]);
 
+   
+
     const [restaurant,setRestaurant]=useState(null);
+    // const[getRestaurantDetails,setGetRestaurantDetails]=useState(null)
 
     async function getRestaurantInfo(){
         
-        const data = await fetch(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=9.957813344607038&lng=76.24363493174314&restaurantId=${id}&submitAction=ENTER`);
+        const data = await fetch(`https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.5270362&lng=77.13593279999999&restaurantId=${id}`);
         const json = await data.json();
-        console.log(json.data);
+        // console.log(json.data);
+        
         
         // feeDetails.restaurantId
-        setRestaurant(json.data?.cards[0]?.card?.card?.info);
+        setRestaurant(json.data);
     }
+  
     
     return restaurant
     
