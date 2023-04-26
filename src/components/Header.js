@@ -23,7 +23,7 @@ const Header =()=>{
 
     const cartItems = useSelector(store =>store.cart.items);
    
-    console.log("render")
+    
     return (
 
     
@@ -36,7 +36,7 @@ const Header =()=>{
             <Link to="/contact" ><li className="px-4 font-poppins font-bold hover:text-orange-400 hover:border-b-2 hover:border-orange-400 transition-all duration-200">Contact</li></Link>
             <Link to="/instamart" ><li className="px-4 font-poppins font-bold hover:text-orange-400 hover:border-b-2 hover:border-orange-400 transition-all duration-200">Instamart</li></Link>
             
-            
+            <Link to="/cart">
             <li className="font-sans block mt-4 lg:inline-block lg:mt-0 lg:ml-6 align-middle text-black hover:text-gray-700">
                 <a href="#" role="button" className="relative flex">
                 <svg className="flex-1 mb-4 mr-2 w-8  h-8 fill-current" viewBox="0 0 24 24">
@@ -46,6 +46,8 @@ const Header =()=>{
                 </span>
                 </a>
             </li>
+            </Link>
+            
         </ul>
         </div>
         

@@ -4,7 +4,7 @@ import { IMG_CDN_URL } from "../contants";
 import Shimmer from "./shimmer";
 import useRestraunt from "../utils/useRestraunt";
 import icon from "../assets/images/star_icon.png"
-import { addItem } from "../utils/cartSlice";
+import { addItem , removeItem} from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
 const ResMenu=()=>{
     const params = useParams();
@@ -47,12 +47,16 @@ const ResMenu=()=>{
      return false;
    });
  }
-  
-
     const dispatch=useDispatch( )
-   const handleAddItem =()=>{
-    dispatch(addItem("Grapes"))
-   }
+
+    const addFoodItem=(item)=>{
+        dispatch(addItem(item))
+    }
+
+    const  removeFoodItem=(item)=>{
+        dispatch(removeItem(item))
+    }
+  
     return (!restaurant)?<Shimmer/>:(
         <>
         {/* <div className=" Restaurent Info bg-black text-white font-nunito"> */}
@@ -107,7 +111,7 @@ const ResMenu=()=>{
                               <button
                                 className="text-gray-800 font-extrabold px-3"
                                 onClick={() => {
-                                //   removeFoodItem();
+                                  removeFoodItem();
                                 }}
                               >
                                 -
@@ -121,11 +125,12 @@ const ResMenu=()=>{
                                 } */}
                               </button>
                               <button
-                                className="text-green-800 font-extrabold px-3"
-                                onClick={() => {
-                                //   addFoodItem(item);
-                                }}
+                                className="text-green-800 font-extrabold px-3" 
+                                onClick={() =>  addFoodItem(item)}
+                                
+                                
                               >
+                               
                                 +
                               </button>
                             </div>
