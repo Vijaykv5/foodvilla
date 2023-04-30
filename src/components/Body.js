@@ -46,13 +46,17 @@ const Body = () => {
   } 
   //Not rendering anything...
   
-  if (!filteredRestraurants ) {
-    return <p>No restaurants found.</p>;
-  } 
+  // if (!filteredRestraurants ) {
+  //   return <p>No restaurants found.</p>;
+  // } 
+  
 
+
+  
   //return is rendering JSX
   return (allRestraunts.length===0)?<Shimmer/>:(
     <>
+    {(filteredRestraurants.length==0)?<div className="font-bold text-3xl text-center mt-28">No Restaurant Found!</div>:
       <div className="search-container p-5 my-9 text-center">
         <input         
           type="text"
@@ -63,6 +67,7 @@ const Body = () => {
             setSearchText(e.target.value);
           }}
         />
+        
      
         <button
           className="search-btn font-poppins bg-orange-400 text-white hover:bg-black p-3.5 rounded-e-lg"
@@ -71,11 +76,15 @@ const Body = () => {
             setFilteredRestraurants(data);
           }}
         >
+         
           Search{""}
         </button>
+        
+  
+
       </div>
       
-      
+        }
      
       <div className="body-cards flex justify-center flex-wrap  mb-24">
         

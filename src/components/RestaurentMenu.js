@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import {useParams} from "react-router-dom";
 import { IMG_CDN_URL } from "../contants";
-import Shimmer from "./shimmer";
+
 import useRestraunt from "../utils/useRestraunt";
 import icon from "../assets/images/star_icon.png"
 import { addItem , removeItem} from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
+import ShimmerMenu from "./ShimmerMenu";
 const ResMenu=()=>{
     const params = useParams();
     const {id}=params;
@@ -57,7 +58,7 @@ const ResMenu=()=>{
         dispatch(removeItem(item))
     }
   
-    return (!restaurant)?<Shimmer/>:(
+    return (!restaurant)?<ShimmerMenu/>:(
         <>
         {/* <div className=" Restaurent Info bg-black text-white font-nunito"> */}
         <div className="bg-black w-full h-96 text-white ">
@@ -65,7 +66,8 @@ const ResMenu=()=>{
         <img  className="w-80 h-52 mt-20 ml-20 absolute rounded-sm "src={IMG_CDN_URL+ restaurantInfo.cloudinaryImageId}/>
          {/* {console.log(restaurant.cloudinaryImageId)}; */}
          <h2 className="absolute ml-[500] mt-36  ">{restaurantInfo.city}</h2>
-        { ( restaurantInfo.avgRating>=4)? <div className="bg-green-500 rounded-sm text-justify  text-white flex  h-6 w-14 absolute -mt-36 ml-[490px] "> <img className="h-6 w-6 p-1 " src={icon}></img>{restaurantInfo.avgRating}</div> :<div className="bg-orange-500 text-justify rounded-sm text-white flex  h-6 w-14 absolute -mt-36 ml-[490px]"> <img className="h-6 w-6 p-1 " src={icon}></img>{ restaurant.avgRating}  </div>}
+         {console.log(restaurantInfo.avgRating)}
+        {(restaurantInfo.avgRating>=4)? <div className="bg-green-500 rounded-sm text-justify  text-white flex  h-6 w-14 absolute mt-52 ml-[500px] "> <img className="h-6 w-6 p-1 " src={icon}></img>{restaurantInfo.avgRating}</div> :<div className="bg-orange-500 text-justify rounded-sm text-white flex  h-6 w-14 absolute mt-52 ml-[500px]"> <img className="h-6 w-6 p-1 " src={icon}></img>{restaurantInfo.avgRating}  </div>}
         <h2 className="absolute ml-[500] mt-64">{restaurantInfo.totalRatingsString}</h2>
         {/* <button className="bg-green-400 p-3 m-2 rounded-md " onClick={()=>handleAddItem()}>+</button> */}
        

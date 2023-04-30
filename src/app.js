@@ -13,6 +13,7 @@ import Shimmer from "./components/shimmer";
 import { Provider } from "react-redux";
 import store from "./utils/store";
 import Cart from "./components/Cart";
+import ShimmerMenu from "./components/ShimmerMenu";
 
 //lazy Loading or Chuncking or Dynamic Import
 const Instamart = lazy(()=> import("./components/Instamart"))
@@ -20,7 +21,7 @@ const AppLayout =()=>{
     return(
         <Provider id="flex-container" store={store} >
         <Header/>
-        <Outlet/>     
+        <Outlet/>    
         <Footer/>
         </Provider>
     )
