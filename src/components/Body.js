@@ -6,6 +6,7 @@ import { filterData } from "../utils/helper";
 import useOnline from "../utils/useOnline";
 import { RESTAURANT_API } from "../contants";
 import { restaurantData } from "../api";
+import ResImage from "../assets/images/NoRestaurent.avif"
 
 
 
@@ -56,7 +57,12 @@ const Body = () => {
   //return is rendering JSX
   return (allRestraunts.length===0)?<Shimmer/>:(
     <>
-    {(filteredRestraurants.length==0)?<div className="font-bold text-3xl text-center mt-28">No Restaurant Found!</div>:
+    {(filteredRestraurants.length==0)?
+    <>
+    <searchtext/>
+    <div className="font-bold text-3xl text-center mt-8">No Restaurant Found!</div>
+    <img  className="ml-[480]  w-96 h-96 " src={ResImage}/>
+    </>:
       <div className="search-container p-5 my-9 text-center">
         <input         
           type="text"

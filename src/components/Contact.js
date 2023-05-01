@@ -1,18 +1,104 @@
-// const Contact = ()=>{
-//     return(
-//        <div>
-//         <h1 className="text-center font-poppins font-bold mt-20 text-4xl">Connect with Me</h1>
-//         <img></img>
-        
-//         <div>
-//         <svg class="w-6 h-6 text-blue-500 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-//             <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
-//         </svg>
-//         </div>
-//        </div> 
-        
-//     ) 
-// }
+import React from "react";
 
-// export default  Contact;
+const Contact = () => {
+  return (
+    <div className="relative flex flex-col justify-center min-h-screen overflow-hidden ">
+      <div className="w-full p-5 m-auto bg-white rounded-sm shadow-xl shadow-rose-600/40 ring-2 ring-orange-400 lg:max-w-xl">
+        <h1 className="text-3xl font-semibold text-center">
+          Contact Us
+        </h1>
+        <form action="https://formspree.io/f/mvonlzzw" method="POST" className="mt-6">
+          <div className="mb-2">
+            <label>
+              <span className="text-gray-700">Your name</span>
+              <input
+                type="text"
+                name="name"
+                className="
 
+            w-full
+            block px-6 py-2 mt-2
+            border-gray-300
+            rounded-md
+            shadow-sm
+            focus:border-indigo-300
+            focus:ring
+            focus:ring-indigo-200
+            focus:ring-opacity-50
+          "
+                placeholder="Name"
+              />
+            </label>
+          </div>
+          <div className="mb-2">
+            <label>
+              <span className="text-gray-700">Email address</span>
+              <input
+                name="email"
+                type="email"
+                className="
+            block
+            w-full
+            mt-2 px-6 py-2
+            border-gray-300
+            rounded-md
+            shadow-sm
+            focus:border-indigo-300
+            focus:ring
+            focus:ring-indigo-200
+            focus:ring-opacity-50
+          "
+                placeholder="Email"
+                required
+              />
+            </label>
+          </div>
+          <div className="mb-2">
+            <label>
+              <span class="text-gray-700">Message</span>
+              <textarea
+                name="message"
+                placeholder="Your Message ..."
+                className="
+            block
+            w-full
+            mt-2 px-6 py-2
+            border-gray-300
+            rounded-md
+            shadow-sm
+            focus:border-orange-400
+            focus:ring
+            focus:ring-orange-400
+            focus:ring-opacity-50
+          "
+                rows="5"
+              ></textarea>
+            </label>
+          </div>
+
+          <div class="mb-6">
+            <button
+              type="submit"
+              className="
+            h-10
+            px-5
+            text-indigo-100
+            bg-orange-400
+            rounded-lg
+            transition-colors
+            duration-150
+            focus:shadow-outline
+            hover:bg-orange-500
+          "
+            >
+              Submit
+            </button>
+          </div>
+          <div></div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default Contact;

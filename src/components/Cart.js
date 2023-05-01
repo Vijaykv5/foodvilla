@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { clearCart } from "../utils/cartSlice";
 
 import { IMG_CDN_URL } from "../contants";
+import CartEmpty from '../assets/images/CartEmpty.gif'
 
 function Cart() {
   const cartItems = useSelector((store) => store.cart.items);
@@ -57,10 +58,11 @@ function Cart() {
 
       {cartItems?.length == 0 && (
         <div className="mt-4 text-center">
-          <h1 className="font-bold text-2xl mt-16">Cart Empty</h1>
-          <h2 className=" font-semibold text-2xl mt-24">
+          <h1 className="font-bold text-4xl  font-adelia mt-6">Cart Empty</h1>
+          <img className="ml-[400] mt-4" src={CartEmpty}/>
+          <h2 className=" font-semibold font-adelia text-2xl mt-14 mb-14">
             You can go to{" "}
-            <a href="/" className="font-bold hover:text-orange-400 ">
+            <a href="/" className="font-bold  hover:text-orange-400 ">
               Home Page
             </a>{" "}
             to view more restaurants.
