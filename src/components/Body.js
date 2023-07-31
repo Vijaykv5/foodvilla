@@ -27,8 +27,8 @@ const Body = () => {
     
     // ?.data?.cards[2]?.data?.data?.cards
     //optional chaining
-    setAllRestraunts(json?.data?.cards[2]?.data?.data?.cards);
-    setFilteredRestraurants(json?.data?.cards[2]?.data?.data?.cards);
+    setAllRestraunts(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilteredRestraurants(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
     catch(error){
       console.log(error)
@@ -96,8 +96,8 @@ const Body = () => {
         
         {filteredRestraurants.map((restraurants) => (
           
-          <Link to={"/restaurent/"+restraurants.data.id}   key={restraurants.data.id}>
-            <Restocard  restaurant={restraurants} />
+          <Link to={"/restaurent/"+restraurants?.info.id}   key={restraurants?.info.id}>
+            <Restocard  restaurant={restraurants?.info} />
             
             </Link>
             
