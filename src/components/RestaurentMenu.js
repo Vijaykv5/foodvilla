@@ -83,7 +83,7 @@ const ResMenu=()=>{
         <ul>
               {uniqueFoodItems.length > 0 ? (
                 Object.values(uniqueFoodItems).map((item, index) => {
-                  if (index < 25) {
+                  if (index < 20) {
                     return (
                       <li
                         className="grid lg:grid-cols-8 justify-center p-7 m-2 border-b sm:grid-cols-4"
