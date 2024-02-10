@@ -3,5 +3,5 @@ export const IMG_CDN_URL =
 
 
 export const RESTAURANT_API =
-"https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.022505&lng=72.5713621&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.2101585&lng=77.4293184&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 

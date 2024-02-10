@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useOnline from "../utils/useOnline";
 import { RESTAURANT_API } from "../contants";
-import { restaurantData } from "../api";
 import ResImage from "../assets/images/NoRestaurent.avif"
 
 
@@ -27,8 +26,14 @@ const Body = () => {
     
     // ?.data?.cards[2]?.data?.data?.cards
     //optional chaining
-    setAllRestraunts(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setFilteredRestraurants(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+
+    console.log(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setAllRestraunts(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setFilteredRestraurants(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
     }
     catch(error){
       console.log(error)
@@ -55,11 +60,11 @@ const Body = () => {
 
   
   //return is rendering JSX
-  return (allRestraunts.length===0)?<Shimmer/>:(
+  return (allRestraunts?.length===0)?<Shimmer/>:(
     <>
-    {(filteredRestraurants.length==0)?
+    {(filteredRestraurants?.length==0)?
     <>
-    <searchtext/>
+    
     <div className="font-bold text-3xl text-center mt-8">No Restaurant Found!</div>
     <img  className="ml-[480]  w-96 h-96 " src={ResImage}/>
     </>:
@@ -80,6 +85,7 @@ const Body = () => {
           onClick={() => {
             const data = filterData(searchtext, allRestraunts);
             setFilteredRestraurants(data);
+            console.log('dd',data);
           }}
         >
          
@@ -94,13 +100,13 @@ const Body = () => {
      
       <div className="body-cards flex justify-center flex-wrap  mb-24">
         
-        {filteredRestraurants.map((restraurants) => (
-          
+        {filteredRestraurants?.map((restraurants) => (
+           
           <Link to={"/restaurent/"+restraurants?.info.id}   key={restraurants?.info.id}>
             <Restocard  restaurant={restraurants?.info} />
             
             </Link>
-            
+         
 
         ))}
       </div>

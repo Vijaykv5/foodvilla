@@ -4,7 +4,7 @@ import icon from "../assets/images/star_icon.png";
 
 const Restocard=(props)=>{
    
-
+    console.log('Hi',props);
    
     const rating =props.restaurant?.avgRating;
     const Discount =props.restaurant?.aggregatedDiscountInfoV3?.subHeader;
